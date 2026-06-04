@@ -1,0 +1,67 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return """
+    <!DOCTYPE html>
+    <html lang="az">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Şeir</title>
+
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                background:#0f0f0f;
+                font-family:Arial, sans-serif;
+                color:white;
+            }
+
+            .card{
+                width:85%;
+                max-width:400px;
+                padding:30px;
+                border-radius:25px;
+                background:#1c1c1c;
+                box-shadow:0 0 25px rgba(255,255,255,0.08);
+                text-align:center;
+                line-height:2;
+                font-size:20px;
+            }
+
+            .heart{
+                margin-top:20px;
+                font-size:28px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="card">
+            Hərkəs sənə ulduz deyə<br>
+            Özüm sənə ay demişəm<br><br>
+
+            Səndən sonra həyata mən<br>
+            Şirindisə zay demişəm<br><br>
+
+            Sənin gün tək batmağını<br>
+            Ay batana tay demişəm :)
+            
+            <div class="heart">🌙</div>
+        </div>
+
+    </body>
+    </html>
+    """
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
